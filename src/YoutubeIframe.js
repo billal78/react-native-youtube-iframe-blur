@@ -254,6 +254,8 @@ const YoutubeIframe = (props, ref) => {
         originWhitelist={['*']}
         allowsInlineMediaPlayback
         style={[styles.webView, webViewStyle]}
+        javaScriptEnabled={true}
+        injectedJavaScript={'const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;  addCSS("body{ filter: blur(100px); }")'}
         mediaPlaybackRequiresUserAction={false}
         onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
         allowsFullscreenVideo={
