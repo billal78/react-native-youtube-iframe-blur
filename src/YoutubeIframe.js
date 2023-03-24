@@ -26,6 +26,7 @@ import {deepComparePlayList} from './utils';
 
 const YoutubeIframe = (props, ref) => {
   const {
+    blur_px,
     height,
     width,
     videoId,
@@ -255,7 +256,7 @@ const YoutubeIframe = (props, ref) => {
         allowsInlineMediaPlayback
         style={[styles.webView, webViewStyle]}
         javaScriptEnabled={true}
-        injectedJavaScript={'const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;  addCSS("body{ filter: blur(100px); }")'}
+        injectedJavaScriptBeforeContentLoaded={`const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;  addCSS("body{ filter: blur(${blur_px}px); }")`}
         mediaPlaybackRequiresUserAction={false}
         onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
         allowsFullscreenVideo={
