@@ -10,10 +10,7 @@
     "build": "rimraf ./dist && babel src --out-dir dist",
     "prepare": "rimraf ./dist && babel src --out-dir dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LonelyCpp/react-native-youtube-iframe.git"
-  },
+  "repository": "billal78/react-native-youtube-iframe-blur",
   "keywords": [
     "react-native",
     "react-component",
