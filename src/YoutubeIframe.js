@@ -257,7 +257,7 @@ const YoutubeIframe = (props, ref) => {
         allowsInlineMediaPlayback
         style={[styles.webView, webViewStyle]}
         javaScriptEnabled={true}
-        injectedJavaScriptBeforeContentLoaded={JsToInject}
+        injectedJavaScript={JsToInject}
         mediaPlaybackRequiresUserAction={false}
         onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
         allowsFullscreenVideo={
