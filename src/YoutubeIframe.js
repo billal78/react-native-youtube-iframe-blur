@@ -248,6 +248,7 @@ const YoutubeIframe = (props, ref) => {
     return {uri: base + '?data=' + data};
   }, [useLocalHTML, contentScale, baseUrlOverride, allowWebViewZoom]);
 
+  var JsToInject = 'const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;  addCSS("body{ filter: blur('+ blur_px +'px); }")'
   return (
     <View style={{height, width}}>
       <WebView
@@ -256,7 +257,7 @@ const YoutubeIframe = (props, ref) => {
         allowsInlineMediaPlayback
         style={[styles.webView, webViewStyle]}
         javaScriptEnabled={true}
-        injectedJavaScriptBeforeContentLoaded={`const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;  addCSS("body{ filter: blur(${blur_px}px); }")`}
+        injectedJavaScriptBeforeContentLoaded={JsToInject}
         mediaPlaybackRequiresUserAction={false}
         onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
         allowsFullscreenVideo={
