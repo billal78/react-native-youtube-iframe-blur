@@ -45,7 +45,7 @@ export interface InitialPlayerParams {
 }
 
 export interface YoutubeIframeProps {
-  blur_px?: number;
+  JsToInject?: string;
   /**
    * height of the webview container
    *

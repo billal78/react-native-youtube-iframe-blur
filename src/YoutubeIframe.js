@@ -26,7 +26,7 @@ import {deepComparePlayList} from './utils';
 
 const YoutubeIframe = (props, ref) => {
   const {
-    blur_px,
+    JsToInject,
     height,
     width,
     videoId,
@@ -248,7 +248,7 @@ const YoutubeIframe = (props, ref) => {
     return {uri: base + '?data=' + data};
   }, [useLocalHTML, contentScale, baseUrlOverride, allowWebViewZoom]);
 
-  var JsToInject = 'const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;  addCSS("body{ filter: blur('+ blur_px +'px); }")'
+  
   return (
     <View style={{height, width}}>
       <WebView
